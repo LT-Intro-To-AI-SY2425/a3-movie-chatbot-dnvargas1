@@ -60,7 +60,7 @@ def title_by_year(matches: List[str]) -> List[str]:
        # print(movie)
        # print(get_year[movie])
         if get_year(movie) == year:
-            result.append(get_title[movie])
+            result.append(get_title(movie))
             # print(get_title[movie])
     print(result)
     return result
@@ -81,7 +81,7 @@ def title_by_year_range(matches: List[str]) -> List[str]:
         in ["1991", "1994"] you will get movies made in 1991, 1992, 1993 & 1994)
     """
     start_year = int(matches[0])
-    end_year = int(matches[0])
+    end_year = int(matches[1])
     result = []
     for movie in movie_db:
         if start_year <= get_year(movie) <= end_year:
@@ -141,7 +141,7 @@ def director_by_title(matches: List[str]) -> List[str]:
     result = []
     for movie in movie_db:
         if get_director(movie) == title:
-            result.append(get_director[movie])
+            result.append(get_director(movie))
     return result
         
 
